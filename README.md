@@ -1,5 +1,5 @@
 # Recursive-Centaur
-Recursive Centaur in python using a recursive function.
+Recursive Centaur using a recursive function.
 
 Example:
 
