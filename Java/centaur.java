@@ -19,25 +19,18 @@ public class centaur{
         if (a == 0)
             //+head 
             top = " o\n/|\\_____\n|       #";
-        else{
-            String aux = new String(top);
+        else
             //spaces + default top
-            top = "";
-            top += (new String("     ")).repeat(a-1);
-            top += "! !``" + aux;
-        }
+            top = (new String("     ")).repeat(a-1) + "! !``" + top;
+        
          
         //is the last body?
-        if(b){
+        if(b)
             //add the legs
-            bottom = "\n";
-            bottom  += (new String("     ")).repeat(a);
-            bottom += "! !```! !";
-        }
-        else{
+            bottom = "\n" + (new String("     ")).repeat(a) + "! !```! !";
+        else
             //add the back
             top += "____";
-        }
 
         System.out.print(top + bottom);
 
