@@ -43,7 +43,6 @@ void centaur(int level, int finish) {
         // legs
         printf("! !```! !");
     }
-    // std::cout << top << bottom;
 }
 
 int main() {
