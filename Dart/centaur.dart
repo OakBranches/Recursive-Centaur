@@ -58,7 +58,7 @@ void main() {
   print(title);
   print("Insert an integer value: ");
 
-  var n = stdin.readLineSync();
+  var n = stdin.readLineSync()  ?? "0";
   int value = int.parse(n);
   centaur(value, true);
 }
