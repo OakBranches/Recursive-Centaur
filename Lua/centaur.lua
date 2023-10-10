@@ -4,42 +4,42 @@ FALSE = 0
 -- Recursive Centaur explanation:
 -- https://github.com/OakBranches/Recursive-Centaur#readme
 local function centaur(level, finish)
-    -- Base case: when level is zero, print the head
-    if level == 0 then
-        print(" o")
-        print("/|\\_____")
-        print("|       #")
-        return
-    end
-
+    -- Base case: when level is less than zero, exit recursion
+    if level < 0 then return end
+    
     -- Recursive call for the next level
     centaur(level - 1, FALSE)
 
-    -- Print spaces for body
-    for i = 1, level do
-        io.write("     ")
+    -- Print head
+    if level == 0 then
+        io.write(" o\n")
+        io.write("/|\\_____\n")
+        io.write("|       #")
+    else
+        -- Print spaces for body
+        for i = 1, level - 1 do
+            io.write("     ")
+        end
+        io.write("! !  ")
+
+        -- Print default top value
+        io.write("|       #")
     end
-
-    io.write("! !``\n")
-
-    -- Print default top value
-    print("|       #")
 
     -- Check if it's the last level for legs
     if finish == FALSE then
         -- Print centaur's back
-        print("____")
+        io.write("____")
+        io.write("\n")
     else
-        -- Print default bottom value
-        print()
-
+        io.write("\n")
         -- Print paddings
         for i = 1, level do
             io.write("     ")
         end
 
         -- Print legs
-        print("! !```! !")
+        io.write("! !   ! !")
     end
 end
 
@@ -47,6 +47,7 @@ local function call_centaur()
     print("Enter level of centaur recursion: ")
     local level = tonumber(io.read())
     centaur(level, TRUE)
+    return
 end
 
 call_centaur()
